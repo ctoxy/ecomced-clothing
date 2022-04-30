@@ -43,5 +43,5 @@ const firebaseConfig = {
       const userSnapshot = await getDoc(userDocRef);
       console.log(userSnapshot);
       //verifie si la donnée existe déja
-      console.log(userSnapshot.exists);
+      console.log(userSnapshot.exists());
   }
