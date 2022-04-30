@@ -7,7 +7,7 @@ const SignIn = () => {
         //console.log(response);
         const {user} = await signInWithGooglePopup();
 
-        createUserDocumentFromAuth(user);
+        const userDocRef = await createUserDocumentFromAuth(user);
     }
     return (
         <Fragment>
