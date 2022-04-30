@@ -1,6 +1,8 @@
 import { Fragment, useState } from 'react';
+import './sign-up-form.styles.scss';
 import { createAuthUserWithEmailAndPassword,createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
-
+import FormInput from '../form-input/form-input.component';
+import Button from '../button/button.component';
 const defaultFormFields = {
     displayName: '',
     email: '',
@@ -48,39 +50,44 @@ const SignUpForm = () => {
     };
 
     return(
-        <Fragment>
-            <h1>Sign up with Email and Password</h1>
+        <Fragment className='sign-up-container'>
+            <h2>Creation de Compte</h2>
+            <span>Sign up with Email and Password</span>
             <form onSubmit={handleSubmit}>
-                <label >Display Name</label>
-                <input 
+                
+                <FormInput
+                    label="Display Name" 
                     type="text"
                     required
                     onChange={handleChange}
                     name="displayName"
                     value={displayName} />
-                <label >Email</label>
-                <input
-                     type="email"
-                     required
-                     onChange={handleChange}
-                     name="email" 
-                     value={email}/>
-                <label >Password</label>
-                <input
+                
+                <FormInput
+                    label="Email"
+                    type="email"
+                    required
+                    onChange={handleChange}
+                    name="email" 
+                    value={email}/>
+                
+                <FormInput
+                    label="Password"
                      type="password"
                      required
                      onChange={handleChange}
                      name="password"
                      value={password} />
-                <label >Confirm Password</label>
-                <input
+                
+                <FormInput
+                    label='Confirm Password'
                      type="password"
                      required
                      onChange={handleChange}
                      name="confirmPassword"
                      value={confirmPassword} />
 
-                <button type='submit'>S'inscrire</button>
+                <Button buttonType='google' type='submit'>S'inscrire</Button>
             </form>
         </Fragment>
     );
