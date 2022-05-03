@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import './sign-up-form.styles.scss';
 import { createAuthUserWithEmailAndPassword,createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
 import FormInput from '../form-input/form-input.component';
@@ -50,7 +50,7 @@ const SignUpForm = () => {
     };
 
     return(
-        <Fragment className='sign-up-container'>
+        <div className='sign-up-container'>
             <h2>Creation de Compte</h2>
             <span>Sign up with Email and Password</span>
             <form onSubmit={handleSubmit}>
@@ -89,7 +89,7 @@ const SignUpForm = () => {
 
                 <Button buttonType='google' type='submit'>S'inscrire</Button>
             </form>
-        </Fragment>
+        </div>
     );
 };
 
